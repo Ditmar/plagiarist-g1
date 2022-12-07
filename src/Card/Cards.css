@@ -1,0 +1,70 @@
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content:center;
+    background: #F7F8FC;
+   
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    max-width: 1100px;
+}
+
+.card{
+    background: #FFFFFF;
+    width: 258px;
+    height: 134px;
+    margin-left: 180px;
+    margin-top: 128px;
+    border: 1px solid #DFE0EB;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card:hover{
+    border: 1px solid #3751FF;
+    box-shadow: 5px 10px 20px 1px rgba(73, 4, 247, 0.911);
+    /*transition: all 0.7s linear;*/
+}
+
+.card-body {
+    text-align: center;
+    font-family: 'Mulish';
+}
+
+.card-title {
+    padding-top: 5px;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: #9FA2B4;
+}
+
+.card-title-hover {
+    padding-top: 5px;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: #3751FF;
+}
+
+.card-text {
+    margin-top: 20px;
+    font-style: normal;
+    font-size: 40px;
+    font-weight:bold;
+    color: #252733;
+}
+
+.card-text-hover {
+    margin-top: 20px;
+    font-style: normal;
+    font-size: 40px;
+    font-weight:bold;
+    color: #3751FF;
+}
