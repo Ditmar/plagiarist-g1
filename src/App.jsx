@@ -39,6 +39,11 @@ function App() {
                   <p>content </p> 
                 </Dashboard>
               </>}/>
+              <Route path="/card" element={<>
+                <Dashboard> 
+                  <Card />
+                </Dashboard>
+              </> } />
               <Route path="/upload" element={<>
                 <Dashboard> 
                   <UploadComponent />
