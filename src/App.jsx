@@ -9,7 +9,16 @@ import Dashboard from './components/DashboardComponent/Dashboard';
 import UploadComponent from './components/UploadComponent';
 import LoaderComponent from './components/LoaderComponent';
 import LoaderSpinnerContextProvider from './context/LoaderSpinnerContextProvider';
-import Detail from './pages/detail';
+import { io } from "socket.io-client";
+import { useEffect } from 'react';
+import socketIoEndpoint from './async/services/socketIO';
+const setUpSocketIO = () => {
+    //socket = io(uri);
+    // socket.on('serverresponse', (room) => {
+    //   console.log(room);
+    //   socket.emit('joinroom', room);
+    // })
+}
 function App() {
 
   const items = [
@@ -42,11 +51,6 @@ function App() {
               <Route path="/upload" element={<>
                 <Dashboard> 
                   <UploadComponent />
-                </Dashboard>
-              </> } />
-              <Route path="/detail/:slug" element={<>
-                <Dashboard> 
-                  <Detail />
                 </Dashboard>
               </> } />
               <Route path="/login" element={<Login />} />
