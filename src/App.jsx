@@ -8,6 +8,7 @@ import Login from './pages/login';
 import Dashboard from './components/DashboardComponent/Dashboard';
 import UploadComponent from './components/UploadComponent';
 import LoaderComponent from './components/LoaderComponent';
+import {CardsFather} from './components/Card/CardFather';
 import LoaderSpinnerContextProvider from './context/LoaderSpinnerContextProvider';
 import Detail from './pages/detail';
 function App() {
@@ -41,7 +42,7 @@ function App() {
               </>}/>
               <Route path="/card" element={<>
                 <Dashboard> 
-                  <Card />
+                  <CardsFather />
                 </Dashboard>
               </> } />
               <Route path="/upload" element={<>
