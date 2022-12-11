@@ -2,13 +2,12 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
     content: {
-        borderStyle: 'dotted',
+        position:"relative",
         width: '100%',
         height: '500px',
         color: '#ccc'
     },
     active: {
-        borderStyle: 'dotted',
         width: '100%',
         height: '500px',
         color: '#000',
