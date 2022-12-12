@@ -48,6 +48,12 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Integrations" />
     </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+        <LayersIcon />
+      </ListItemIcon>
+      <ListItemText primary="Listar Tesis" />
+    </ListItemButton>
   </React.Fragment>
 );
 
