@@ -1,0 +1,37 @@
+.content-table{
+    width: 100%;
+    height: 100%;
+}
+.table-post{
+    width: 100%;
+}
+.title-table{
+    color: #9FA2B4;
+}
+.tittle-post{
+    display: flex;
+    flex-direction: column;
+
+}
+.posts{
+    display: flex;
+}
+
+.tittle-post .title{
+    color: #252733;
+    font-weight: 500;
+    font-size: 14px;
+}
+.tittle-post .date-publicacion{
+    font-size: 12px;
+    color: #C5C7CD;
+}
+
+.views .neme-autor{
+    
+    color: #626263;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
