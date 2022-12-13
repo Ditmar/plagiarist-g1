@@ -12,6 +12,7 @@ import LoaderSpinnerContextProvider from './context/LoaderSpinnerContextProvider
 import { io } from "socket.io-client";
 import { useEffect } from 'react';
 import socketIoEndpoint from './async/services/socketIO';
+import ListarTesis from './components/listarTesis/ListarTesis';
 const setUpSocketIO = () => {
     //socket = io(uri);
     // socket.on('serverresponse', (room) => {
@@ -51,6 +52,11 @@ function App() {
               <Route path="/upload" element={<>
                 <Dashboard> 
                   <UploadComponent />
+                </Dashboard>
+              </> } />
+              <Route path="/list" element={<>
+                <Dashboard> 
+                  <ListarTesis />
                 </Dashboard>
               </> } />
               <Route path="/login" element={<Login />} />
