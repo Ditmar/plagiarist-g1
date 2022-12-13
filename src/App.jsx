@@ -5,6 +5,7 @@ import {
   Route,
 } from 'react-router-dom';
 import Login from './pages/login';
+import Menu from './pages/login/Menu'
 import Dashboard from './components/DashboardComponent/Dashboard';
 import UploadComponent from './components/UploadComponent';
 import LoaderComponent from './components/LoaderComponent';
@@ -53,7 +54,8 @@ function App() {
                   <UploadComponent />
                 </Dashboard>
               </> } />
-              <Route path="/login" element={<Login />} />
+              <Route exac path="/login" element={<Login />} />
+              <Route exact path="/menu" element={<Menu />} />
             </Routes>
           </BrowserRouter>
         </LoaderSpinnerContextProvider>
