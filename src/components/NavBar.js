@@ -1,9 +1,10 @@
 import { MenuOutlined, } from "@mui/icons-material"
-import { AppBar, Avatar, Badge, Grid, IconButton, Toolbar, Typography, Card, List, ListItem, Divider, ListItemText, ListItemAvatar, Paper, InputBase } from "@mui/material"
+import { AppBar, Avatar, Badge, Grid, IconButton, Toolbar, Typography,Paper, InputBase } from "@mui/material"
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import React, {useState} from 'react'
 import SearchIcon from '@mui/icons-material/Search'; 
 import axios from 'axios';
+import { SearchPage } from "../pages/SearchPage";
 
 const initialValues = {
   searchcriterion: ''
@@ -104,9 +105,7 @@ export const NavBar = ({ drawerWidth = 255 }) => {
 
       {
         resultado &&
-        <div dangerouslySetInnerHTML={{__html: resultado}} style={{ marginLeft: '280px', marginTop: '70px', marginRight: '25px' }}>
-
-        </div>
+        <SearchPage resultado={resultado} />
       }
     </>
   )
