@@ -59,7 +59,7 @@ function App() {
                   <UploadComponent />
                 </Dashboard>
               </> } />
-              <Route path="/login" element={<Login />} />
+              <Route exac path="/login" element={<Login />} />
             </Routes>
           </BrowserRouter>
         </LoaderSpinnerContextProvider>
