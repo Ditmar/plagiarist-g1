@@ -15,16 +15,23 @@ const useUpload = (room) => {
     }
     const onCancelUpload = () => {
         setFormatAccepted(false);
+        setFile({})
     }
     const checkUpload = (event) => {
         const [file] =  getFile(event);
-        setFile({
-            file,
-            name: file.name,
-            type: file.type,
-            size: Math.round(((file.size / 1024) /  1024) * 100) / 100
-        });
-        setFormatAccepted(true);
+        if(file.type === "application/pdf"){
+            setFile({
+                file,
+                name: file.name,
+                type: file.type,
+                size: Math.round(((file.size / 1024) /  1024) * 100) / 100
+            });
+            setFormatAccepted(true);
+        }else{
+            alert("No corresponde al formato")
+            setFile({})
+            setFormatAccepted(false)
+        }
     }
     const getUploadForm = () => {
         const data = new FormData();
@@ -33,6 +40,22 @@ const useUpload = (room) => {
         data.append('code', room);
         return data;
     }
-    return {checkUpload, formatAccepted, onCancelUpload, file, getUploadForm}
+    const onChangeFile = (e)=>{
+        const file = e.target.files[0]
+        if(file.type === "application/pdf"){
+            setFile({
+                file,
+                name: file.name,
+                type: file.type,
+                size: Math.round(((file.size / 1024) /  1024) * 100) / 100
+            });
+            setFormatAccepted(true);
+        }else{
+            alert("No corresponde al formato")
+            setFile({})
+            setFormatAccepted(false)
+        }
+    }
+    return {onChangeFile, checkUpload, formatAccepted, onCancelUpload, file, getUploadForm}
 }
 export default useUpload;
