@@ -4,7 +4,7 @@ import ThesisServices from "../../services/seviceslist";
 import { TableListTable } from "./ListTesis/ListTesis";
 import { ClassNames } from "@emotion/react";
 import { useStyles } from "./ListarTesis.styles";
-import { Edit, Filter, Filter1, Filter1Outlined, Filter1Rounded, Filter1Sharp, Filter1TwoTone, FilterAlt, Sort } from "@mui/icons-material";
+import { FilterAlt, Sort } from "@mui/icons-material";
 import { TableSortLabel } from "@material-ui/core";
 import { Box } from "@mui/system";
 import TableRow from '@mui/material/TableRow';
