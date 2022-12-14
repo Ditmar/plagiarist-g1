@@ -1,44 +1,44 @@
-import React,{ useEffect, useState } from "react";
-import SortIcon from '@mui/icons-material/Sort';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import React, { useEffect, useState } from "react";
+import TextField from '@mui/material/TextField';
 import ThesisServices from "../../services/seviceslist";
-import './ListarTesis.css'
-
 import { TableListTable } from "./ListTesis/ListTesis";
+import { ClassNames } from "@emotion/react";
+import { useStyles } from "./ListarTesis.styles";
+import { Edit, Filter, Filter1, Filter1Outlined, Filter1Rounded, Filter1Sharp, Filter1TwoTone, FilterAlt, Sort } from "@mui/icons-material";
+import { TableSortLabel } from "@material-ui/core";
+import { Box } from "@mui/system";
+import TableRow from '@mui/material/TableRow';
+import TableCell from '@mui/material/TableCell';
 
-const ListarTesis=()=>{
+
+const ListarTesis = () => {
 
     const [listTesis, setLisTesis] = useState([]);
+    const classes = useStyles();
 
-    useEffect(()=>{
-        let listT =  ThesisServices.listarTesis();
+    useEffect(() => {
+        let listT = ThesisServices.listarTesis();
         console.log(listT);
         setLisTesis(
             listT
         );
-    },[])
+    }, [])
 
-    return(
+
+    return (
+
         <div className="content-listar-tesis">
-            <div className="content-header-secction">
-                <div className="subtile-list">Lista</div>
-                <div className="content-box">
-                    <input className="text-box"></input>
-                    <input className="text-box"></input>
-                    <input className="text-box"></input>
-                </div>
-                <div className="content-filters">
-                    <div className="option-filters">
-                        <SortIcon/>          
-                        <div>sort</div> 
-                    </div>
-                    <div className="option-filters">
-                        <FilterAltIcon/>
-                        <div>filter</div> 
-                    </div>
-                </div>
-            </div>
-            <div className="content-table-component">
+            <TableRow>
+                <TableCell className={classes.titles}>Lista </TableCell>
+                <TableCell align="right"><TextField className={classes.searchs}></TextField></TableCell>
+                <TableCell align="right"><TextField className={classes.searchs}></TextField></TableCell>
+                <TableCell align="right"><TextField className={classes.searchs}></TextField></TableCell>
+                <TableCell align="right" className={classes.subtitleFilter}>
+                    <label><Sort></Sort> Sort </label>
+                    <label><FilterAlt></FilterAlt> Filter </label>
+                </TableCell>
+            </TableRow>
+            <div >
                 <TableListTable listTesis={listTesis} />
             </div>
         </div>

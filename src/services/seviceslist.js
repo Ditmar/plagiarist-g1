@@ -9,8 +9,8 @@ class ThesisServices{
                 autor:"Tom Cruise",
                 publicationDate:"1 day ago",
                 ultimaEdicion:"6:30 PM",
-                downloadS:"HIGH",
-                dateAutor:"24.05.2019"
+                downloadS:"NORMAL",
+                dateAutor:"on 24.05.2019"
             },
             {
                 urlImageAvatar:"https://www.themoviedb.org/t/p/w300_and_h450_bestv2/At3JgvaNeEN4Z4ESKlhhes85Xo3.jpg",
@@ -18,8 +18,8 @@ class ThesisServices{
                 autor:"Matt Damon",
                 publicationDate:"1 day ago",
                 ultimaEdicion:"8:00 AM",
-                downloadS:"LOW",
-                dateAutor:"24.06.2019"
+                downloadS:"NORMAL",
+                dateAutor:"on 24.06.2019"
             },
             {
                 urlImageAvatar:"https://www.themoviedb.org/t/p/w300_and_h450_bestv2/im9SAqJPZKEbVZGmjXuLI4O7RvM.jpg",
@@ -27,8 +27,8 @@ class ThesisServices{
                 autor:"Robert Downey",
                 publicationDate:"2 days ago",
                 ultimaEdicion:"7:30 PM",
-                downloadS:"HIGH",
-                dateAutor:"24.05.2019"
+                downloadS:"NORMAL",
+                dateAutor:"on 24.05.2019"
             },
             {
                 urlImageAvatar:"https://www.themoviedb.org/t/p/original/2y4doWX4lCzDMjCL5KOA4KBz6Hn.jpg",
@@ -37,7 +37,7 @@ class ThesisServices{
                 publicationDate:"2 days ago",
                 ultimaEdicion:"5:00 PM",
                 downloadS:"NORMAL",
-                dateAutor:"24.05.2019"
+                dateAutor:"on 24.05.2019"
             },
             {
                 urlImageAvatar:"https://www.themoviedb.org/t/p/w300_and_h450_bestv2/iWdKjMry5Pt7vmxU7bmOQsIUyHa.jpg",
@@ -45,8 +45,8 @@ class ThesisServices{
                 autor:"Henry Cavil",
                 publicationDate:"3 days ago",
                 ultimaEdicion:"4:00 PM",
-                downloadS:"HIGH",
-                dateAutor:"24.05.2019"
+                downloadS:"NORMAL",
+                dateAutor:"on 24.05.2019"
             },
             {
                 urlImageAvatar:"https://www.themoviedb.org/t/p/w300_and_h450_bestv2/3bOGNsHlrswhyW79uvIHH1V43JI.jpg",
@@ -55,7 +55,7 @@ class ThesisServices{
                 publicationDate:"3 days ago",
                 ultimaEdicion:"2:00 PM",
                 downloadS:"NORMAL",
-                dateAutor:"24.05.2019"
+                dateAutor:"on 24.05.2019"
             },
             {
                 urlImageAvatar:"https://www.themoviedb.org/t/p/w300_and_h450_bestv2/n0nSMnqTGEmLXfsQcm4vOVln3Ze.jpg",
@@ -63,8 +63,8 @@ class ThesisServices{
                 autor:"Sam Smith",
                 publicationDate:"4 days ago",
                 ultimaEdicion:"11:30 AM",
-                downloadS:"LOW",
-                dateAutor:"24.05.2019"
+                downloadS:"NORMAL",
+                dateAutor:"on 24.05.2019"
             },
             {
                 urlImageAvatar:"https://www.themoviedb.org/t/p/w300_and_h450_bestv2/3bOGNsHlrswhyW79uvIHH1V43JI.jpg",
@@ -73,7 +73,7 @@ class ThesisServices{
                 publicationDate:"6 days ago",
                 ultimaEdicion:"1:00 PM",
                 downloadS:"NORMAL",
-                dateAutor:"24.05.2019"
+                dateAutor:"on 24.05.2019"
             },
             
         ];

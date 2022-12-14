@@ -1,21 +1,24 @@
-import { Edit, EditAttributes, Sort } from "@mui/icons-material";
-import SortIcon from '@mui/icons-material/Sort';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import KeyboardArrowLeftSharpIcon from '@mui/icons-material/KeyboardArrowLeftSharp';
-import KeyboardArrowRightSharpIcon from '@mui/icons-material/KeyboardArrowRightSharp';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import BorderColorIcon from '@mui/icons-material/BorderColor';
 import React, { useEffect, useState } from "react";
-
-import './ListTableThesis.css'
+import { useStyles } from '../ListarTesis.styles';
+import { ArrowDownward, ArrowLeft, DockTwoTone, DoNotStep, Edit, OnlinePredictionSharp, OpenInNewTwoTone, PointOfSale, ThreeDRotationSharp } from '@mui/icons-material';
+import Divider from '@mui/material/Divider';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import TablePaginationActions from '@mui/material/TablePagination/TablePaginationActions';
+import TablePaginationDemo from '../paginacion';
+import { Menu } from '@material-ui/core';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 export const TableListTable = ({ listTesis = [] }) => {
 
     // console.log(JSON.stringify(listTesis));
 
     const [pagination, setPagination] = useState(0);
+    const classes = useStyles();
     const [listT, setListT] = useState([])
 
     useEffect(() => {
@@ -30,88 +33,66 @@ export const TableListTable = ({ listTesis = [] }) => {
     }
 
     return (
-        <div className="content-table">
-            <table className="table-list-tesis">
+        <div className={classes.contentTable}>
+            <table className={classes.tabletesis}>
                 <thead>
                     <tr>
-                        <th className="title-table">Detalle</th>
-                        <th className="title-table">Autor</th>
-                        <th className="title-table">Editar</th>
-                        <th className="title-table">Descargar</th>
+                        <th className={classes.title}>Detalle</th>
+                        <th className={classes.title}>Autor</th>
+                        <th className={classes.title}>Editar</th>
+                        <th className={classes.title}>Descargar</th>
                     </tr>
                 </thead>
-                <tbody className="body-list">
+                <tbody >
                     {
                         listT.map((d, i) => {
-                            return <tr className="tr-list">
+                            return <tr >
                                 <td>
-                                    <div className="detalle">
-                                        <div className="avatar">
-                                            <Avatar sx={{ width: 30, height: 35 }} alt="Remy Sharp" src={d.urlImageAvatar} />
-                                        </div>
-                                        <div className="data-autor">
-                                            <div className="title">
-                                                {d.title}
-                                            </div>
-                                            <div className="date-publicacion">
-                                                Updated {d.publicationDate}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="date-autor">
-                                        <div className="name-autor">{d.autor}</div>
-                                        <div className="name-dateAutor">on {d.dateAutor}</div>
+                                    <div className={classes.title}>
+                                        <ListItem>
+                                            <ListItemAvatar>
+                                                <Avatar sx={{ width: 30, height: 35 }} alt="Remy Sharp" src={d.urlImageAvatar}>
+                                                </Avatar>
+                                            </ListItemAvatar>
+                                            <ListItemText primary={d.title} secondary={d.publicationDate} />
+                                        </ListItem>
 
                                     </div>
                                 </td>
                                 <td>
-                                    <div className="edit-data">
-                                        <div className="edita-icon">
-                                            <BorderColorIcon />
-                                        </div>
-                                        <div className="edita-fecha">{d.ultimaEdicion}</div>
-                                    </div>
+                                    <ListItem>
+                                        <ListItemText primary={d.autor} secondary={d.dateAutor} />
+                                    </ListItem>
                                 </td>
                                 <td>
-                                    <div className="data-descarga">
-                                        <div className={d.downloadS}>
+                                    <ListItem>
+                                        <ListItemText primary={<Edit></Edit>} secondary={d.ultimaEdicion} />
+                                    </ListItem>
+                                </td>
+                                <td>
+                                    <div>
+                                        <div className= {classes.NORMAL}>
                                             {d.downloadS}
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <div className="icon-option">
-                                        <div className="option">
-                                            <MoreVertIcon />
-                                        </div>
+                                    <div>
+                                        <MoreVertIcon />
                                     </div>
                                 </td>
-
-                            </tr>
+                             <Divider />
+                            </tr> 
 
                         })
                     }
-                </tbody><br/>
-                {/* pagination */}
-                <div className="content-pagination">
-                    <div className="pagination-1">
-                        Row per page: 8
-                        <ArrowDropDownIcon />
-                    </div>
-                    <div className="pagination-2">
-                        1-8 of 1240
-                    </div>
-                    <div className="conten-icons">
-                        <KeyboardArrowLeftSharpIcon />
-                        <KeyboardArrowRightSharpIcon />
-                    </div>
-                </div>
+                </tbody><br />
 
             </table>
-
-
+            {/* pagination */}
+            <div className={classes.dataDownload}>
+                <TablePaginationDemo></TablePaginationDemo>
+            </div>
 
         </div>
     );
