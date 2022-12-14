@@ -1,5 +1,4 @@
-import React from 'react';
-
+import {useEffect}from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Typography,CardContent,Card,CardActions} from '@material-ui/core';
 import AvatarD from './Avatar';
@@ -8,7 +7,8 @@ import FieldPassword from './FieldPassword';
 import SigUp from './sigUp';
 import CustomizedButtons from './boton'
 import Fonts from './fonts';
-
+import { helpHttp } from '../helpers/helpHttp';
+//makeStyles
 const useStyles = makeStyles({
   cardStyle: {
   background:'#FFFFFF',
@@ -46,6 +46,21 @@ const useStyles = makeStyles({
 })
 
 const Login= () => {
+
+//peticion a la url con fetch
+let url="http://3.23.86.147/server/autenthication/login";
+fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .catch((error) => console.log(error));
+
+
+
 const classes=useStyles()
   return (
     <Card className={classes.cardStyle}>
