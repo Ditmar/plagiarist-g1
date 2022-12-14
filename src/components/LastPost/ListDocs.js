@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import LatestPosts from "../../services/services";
-import './ListDocs.css'
-import { TableLast } from "./TableDocs/TableDocs";
 
+import { useStyles } from "./ListDocs.styles";
+import { TableLast } from "./TableDocs/TableDocs";
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 const
     ListarDocumentos = () => {
 
         const [ListPost, setLisTesis] = useState([]);
- 
+        const classes = useStyles();
+
         useEffect(() => {
             let listT =
                 LatestPosts.
@@ -19,16 +23,17 @@ const
         }, [])
 
         return (
-            <div className="content-list-post">
-                <div className="content-header-secction">
-                    <div className="name-title">Ultimos Documentos Publicados</div>
+
+            <div className={classes.container}>
+                <div className={classes.title}>
+                    <div className={classes.lastRow}>Ultimos Documentos Publicados</div>
                 </div>
-                <div className="group">
+                <div className={classes.itemTitle}>
                     <div>
-                        <label className="data-group">Group:</label><label className="name-group">Support</label>
+                        <label className={classes.subtitle_G}>Group:</label><label className={classes.subtitle_S}>Support</label>
                     </div>
                 </div>
-                <p className="list-publications">
+                <p >
                     <TableLast ListPost={ListPost} />
                 </p>
 

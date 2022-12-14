@@ -1,12 +1,16 @@
+import { TableCell, TableRow } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 
-import './TableDocs.css';
+import { useStyles } from "../ListDocs.styles";
+
+
 
 export const TableLast = ({ ListPost = [] }) => {
 
 
     const [pagination, setPagination] = useState(0);
     const [listT, setListT] = useState([])
+    const classes = useStyles();
 
     useEffect(() => {
 
@@ -14,38 +18,21 @@ export const TableLast = ({ ListPost = [] }) => {
     }, [listT])
 
     return (
-        <div className="content-table">
-            <table className="table-post">
+
+        <div className={classes.container}>
+            <table className={classes.title}>
                 <tbody>
                     {
                         listT.map((d, i) => {
-                            return <tr>
-                                <td>
-                                    <div className="posts">
-                                        <div className="tittle-post">
-                                            <div className="title">
-                                                {d.title}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="views">
-                                        <div className="neme-autor">
-                                            <a href="">{d.view}</a>
-                                        </div>
-
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="views">
-                                        <div className="neme-autor">
-                                            <label className="neme-autor" >{d.pages} Pag</label>
-                                        </div>
-                                    </div>
-                                </td>
-
-                            </tr>
+                            return <TableRow>
+                            <TableCell className={classes.itemTitle} align="right">{d.title} </TableCell>
+                            <TableCell className={classes.itemTitle} align="right"> </TableCell><TableCell className={classes.itemTitle} align="right"> </TableCell>
+                            <TableCell className={classes.itemTitle} align="right"> </TableCell>
+                            <TableCell className={classes.link} align="right"><a href="">{d.view}</a></TableCell>
+                            
+                            <TableCell className={classes.itemV} align="right">{d.pages} pag</TableCell>
+                            </TableRow>
+                            
                         })
 
                     }
