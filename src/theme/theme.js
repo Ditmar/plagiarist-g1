@@ -22,6 +22,12 @@ const theme = createTheme({
         }, 
         fourth: {
             main: '#EBC7E8'
+        },
+        listThesis:{
+            main:'#FFFFFF'
+        },
+        normal:{
+            main:'#645CAA'
         }
     },
     overrides: {

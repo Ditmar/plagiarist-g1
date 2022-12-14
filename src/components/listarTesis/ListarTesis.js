@@ -27,7 +27,7 @@ const ListarTesis = () => {
 
     return (
 
-        <div className="content-listar-tesis">
+        <div className={classes.contentTable}>
             <TableRow>
                 <TableCell className={classes.titles}>Lista </TableCell>
                 <TableCell align="right"><TextField className={classes.searchs}></TextField></TableCell>

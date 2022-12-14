@@ -33,7 +33,7 @@ export const TableListTable = ({ listTesis = [] }) => {
     }
 
     return (
-        <div className={classes.contentTable}>
+        <div className={classes.container}>
             <table className={classes.tabletesis}>
                 <thead>
                     <tr>

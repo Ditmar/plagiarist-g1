@@ -1,15 +1,20 @@
 import { makeStyles } from "@material-ui/styles";
 import { CenterFocusStrong } from "@mui/icons-material";
 import { borderRadius } from "@mui/system";
+import Theme from "../../theme/theme";
 
-export const useStyles = makeStyles(() => ({
+
+
+
+export const useStyles = makeStyles((theme) => ({
     container: {
-        backgroundColor: "#fffff",
+        background: theme.palette.listThesis.main,
         border: "1px solid #dfe0eb",
-        borderRadius: 3,
+        borderRadius: 4,
 
     },
     contentTable:{
+        background: theme.palette.listThesis.main,
         width: '100%',
         height:'100%',
     },
@@ -54,9 +59,10 @@ export const useStyles = makeStyles(() => ({
         fontFamily: "Rubik",
         fontStyle: "normal",
         fontWeight: "600",
-        background:"#FCFDFE",
+        background:theme.palette.listThesis.main,
         alignItems: 'center',
         justifyContent: 'center',
+        borderRadius:5,
         fontSize: 14,
         color: "#000000",
         display: 'flex',
@@ -91,13 +97,13 @@ export const useStyles = makeStyles(() => ({
         alignItems: 'center',
         justifyContent: 'center',
         display: 'flex',
-        backgroundColor:'#FEC400',
+        background: "#FFFFFF",
         color: 'white',
         borderRadius:10,
     },
     contentList:{
     position: 'relative',
-    bbackgroundColor: '#FFFFFF',
+    backgroundColor: '#FFFFFF',
     borderRadius:9,
     width: '100%',
     height:'100%',
