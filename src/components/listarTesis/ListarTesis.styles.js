@@ -4,8 +4,6 @@ import { borderRadius } from "@mui/system";
 import Theme from "../../theme/theme";
 
 
-
-
 export const useStyles = makeStyles((theme) => ({
     container: {
         background: theme.palette.listThesis.main,
@@ -59,12 +57,11 @@ export const useStyles = makeStyles((theme) => ({
         fontFamily: "Rubik",
         fontStyle: "normal",
         fontWeight: "600",
-        background:theme.palette.listThesis.main,
+        background:theme.palette.search.main,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius:5,
+        borderRadius:10,
         fontSize: 14,
-        color: "#000000",
         display: 'flex',
 
     },
@@ -79,7 +76,7 @@ export const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
         display: 'flex',
-        backgroundColor:'red',
+        background:theme.palette.high.main,
         color: 'white',
         borderRadius:10,
     },
@@ -87,7 +84,7 @@ export const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
         display: 'flex',
-        backgroundColor:'#29CC97',
+        background:theme.palette.normal.main,
         borderRadius:4,
         color: 'white',
         borderRadius:10,
@@ -97,15 +94,15 @@ export const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
         display: 'flex',
-        background: "#FFFFFF",
+        background:theme.palette.low.main,
         color: 'white',
         borderRadius:10,
     },
     contentList:{
-    position: 'relative',
-    backgroundColor: '#FFFFFF',
-    borderRadius:9,
-    width: '100%',
-    height:'100%',
+        position: 'relative',
+        backgroundColor: '#FFFFFF',
+        borderRadius:9,
+        width: '100%',
+        height:'100%',
     },
 }))

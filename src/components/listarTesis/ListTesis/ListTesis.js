@@ -71,7 +71,7 @@ export const TableListTable = ({ listTesis = [] }) => {
                                 </td>
                                 <td>
                                     <div>
-                                        <div className= {classes.NORMAL}>
+                                        <div className={classes.NORMAL}>
                                             {d.downloadS}
                                         </div>
                                     </div>
@@ -81,8 +81,8 @@ export const TableListTable = ({ listTesis = [] }) => {
                                         <MoreVertIcon />
                                     </div>
                                 </td>
-                             <Divider />
-                            </tr> 
+                                <Divider />
+                            </tr>
 
                         })
                     }

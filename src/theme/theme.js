@@ -16,19 +16,32 @@ const theme = createTheme({
         },
         secondary: {
             main: '#A084CA'
-        }, 
+        },
         third: {
             main: '#BFACE0'
-        }, 
+        },
         fourth: {
             main: '#EBC7E8'
         },
-        listThesis:{
-            main:'#FFFFFF'
+        search: {
+            main: '#d9d9d9'
         },
-        normal:{
-            main:'#645CAA'
+        listThesis: {
+            main: '#ffffff '
+        },
+        normal: {
+            main: '#29CC97'
+        },
+        low: {
+            main: '#ffcc00'
+        },
+        high: {
+            main: '#ff0000'
+        },
+        colordownload: {
+            main: '#ffffff'
         }
+
     },
     overrides: {
         MuiCssBaseline: {
@@ -49,7 +62,7 @@ const theme = createTheme({
 const Theme = ({ children }) => (
     <ThemeProvider theme={theme}>
         <CssBaseline />
-        { children }
+        {children}
     </ThemeProvider>
 )
 export default Theme;
