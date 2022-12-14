@@ -1,9 +1,10 @@
-import { makeStyles } from "@material-ui/styles";
-export const useStyles = makeStyles(() => ({
+import { makeStyles} from "@material-ui/styles";
+
+export const useStyles = makeStyles((theme) => ({
     container: {
-        background: "#F7F8FC" ,
+        background: theme.palette.primary.main,
         border: "1px solid #DFE0EB",
-        borderRadius: 4,
+        borderRadius: 3,
         padding: "24px 4px 24px 0px",
     },
     link: {
