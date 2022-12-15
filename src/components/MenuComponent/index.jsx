@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
+import { items } from '../nav/components/data/items';
 import useStyles from './menuComponent.styles';
 
-const MenuComponent = ({items}) => {
+const MenuComponent = () => {
     const classes = useStyles();
     return (
     <div className={classes.menu}>

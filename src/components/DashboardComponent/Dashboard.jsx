@@ -21,7 +21,13 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 //import Chart from './Chart';
 // import Deposits from './Deposits';
 // import Orders from './Orders';
-import { SideBar} from '../nav/components/SideBar'
+
+import useStyle from './SidebarStyle'
+import { Avatar, Button, Divider, Drawer, Hidden } from '@mui/material';
+import logo from '../../assets/images/logoo.png'
+import { List } from '@material-ui/core';
+import { mainListItems, secondaryListItems,workListItems
+  ,reviewListItems, toListItems,postListItems,reportsListItems} from './listItems';
 
 // function Copyright(props) {
 //   return (
@@ -82,51 +88,54 @@ const AppBar = styled(MuiAppBar, {
 //   }),
 // );
 
-const  DashboardContent = ({children}) => {
+const DashboardContent = ({ children }) => {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
 
+  // const classes = useStyles();
+  const classe = useStyle();
+
   return (
-      <Box sx={{ display: 'flex' }}>
-        <AppBar position="absolute" open={open}>
-          <Toolbar
+    <Box sx={{ display: 'flex' }}>
+      <AppBar position="absolute" open={open}>
+        <Toolbar
+          sx={{
+            pr: '24px', // keep right padding when drawer closed
+          }}
+        >
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={toggleDrawer}
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              marginRight: '36px',
+              ...(open && { display: 'none' }),
             }}
           >
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              onClick={toggleDrawer}
-              sx={{
-                marginRight: '36px',
-                ...(open && { display: 'none' }),
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              component="h1"
-              variant="h6"
-              color="inherit"
-              noWrap
-              sx={{ flexGrow: 1 }}
-            >
-              Dashboard
-            </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-        <SideBar/>
-        {/* <Drawer variant="permanent" open={open}>
-          <Toolbar
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            component="h1"
+            variant="h6"
+            color="inherit"
+            noWrap
+            sx={{ flexGrow: 1 }}
+          >
+            Dashboard
+          </Typography>
+          <IconButton color="inherit">
+            <Badge badgeContent={4} color="secondary">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+      <Hidden xsDown>
+        <Drawer styled={{width:'100px'}} className={classe.drawer} variant="permanent" open={open}>
+          <Toolbar style={{ background: '#363740', margin: '0px' }}
             sx={{
               display: 'flex',
               alignItems: 'center',
@@ -135,34 +144,60 @@ const  DashboardContent = ({children}) => {
             }}
           >
             <IconButton onClick={toggleDrawer}>
-              <ChevronLeftIcon />
+              <Button>
+                <Box
+                  component='div'
+                  sx={{
+                    width: '100%',
+                    display: 'flex',
+                    justifyContent: 'space-evenly',
+                    alignItems: 'center'
+                  }}
+                >
+                  <Avatar className={classe.avatar} alt="logo" src={logo} />
+                  <Typography sx={{
+                    color: '#A4A6B3',
+                    fontWeight: '700',
+                    fontFamily: ['Mulish', 'sans-serif'].join(),
+                  }} variant="h6"
+                    style={{ marginLeft: '10px', textTransform: 'none' }}
+                  >Plagio Control
+                  </Typography>
+                </Box>
+              </Button>
             </IconButton>
           </Toolbar>
           <Divider />
-          <List component="nav">
-            {mainListItems}
-            <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+          <List className={classe.nav} component="nav">
+            <p className={classe.hover}>{mainListItems}</p>
+            <p className={classe.hover}>{workListItems}</p>
+            <p className={classe.hover}>{reviewListItems}</p>
+            <p className={classe.hover}>{toListItems}</p>
+            <p className={classe.hover}>{postListItems}</p>
+            <p className={classe.hover}>{reportsListItems}</p>
+            <Divider className={classe.divider} sx={{ my: 1 }} />
+            <p className={classe.hover}>{secondaryListItems}</p>
           </List>
-        </Drawer> */}
-        <Box
-          component="main"
-          sx={{
-            backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
-                ? theme.palette.grey[100]
-                : theme.palette.grey[900],
-            flexGrow: 1,
-            height: '100vh',
-            overflow: 'auto',
-          }}
-        >
-          <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            {children}
-          </Container>
-        </Box>
+        </Drawer>
+      </Hidden>
+      <Box
+        component="main"
+        sx={{
+          backgroundColor: (theme) =>
+            theme.palette.mode === 'light'
+              ? theme.palette.grey[100]
+              : theme.palette.grey[900],
+          flexGrow: 1,
+          height: '100vh',
+          overflow: 'auto',
+        }}
+      >
+        <Toolbar />
+        <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          {children}
+        </Container>
       </Box>
+    </Box>
   );
 }
 
