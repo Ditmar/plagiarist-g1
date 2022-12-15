@@ -1,10 +1,11 @@
-import { Button, Paper } from "@material-ui/core";
+import {Button, Paper } from "@material-ui/core";
 import { PictureAsPdf } from "@mui/icons-material";
 import useStyles from "./itemUpload.styles";
 
 const ItemUpload = ({onCancel, name, type, size, onUpload}) => {
     const classes = useStyles();
     return <Paper className={classes.container} elevation={3}>
+        <input type="file" accept=".pdf" className={classes.aea}></input>
         <PictureAsPdf style={{ color: 'red' }} /> {name}  <br/>  {type} <br/> {size} MB
         <br/>
         <Button variant="outlined" onClick={onUpload} color="#ff0000">
