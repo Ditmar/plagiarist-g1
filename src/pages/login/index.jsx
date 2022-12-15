@@ -13,19 +13,25 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
+  //peticion a la url con fetch y funcion asyncronas
+    let url="http://3.23.86.147/server/autenthication/login"
+    async function login() {
+      console.warn(email, password);
+      let item = { email, password };
+      let result = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(item),
+      });
+      result = await result.json();
+      localStorage.setItem("user-info", JSON.stringify(result));
+      History.pushState("/add");
+    }
 
-  //peticion a la url con fetch
-  /*let url="http://3.23.86.147/server/autenthication/login";
-fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .catch((error) => console.log(error));*/
-  const classes = useStyles();
+ const classes = useStyles();
   return (
     <Card className={classes.cardStyle}>
       <CardContent className={classes.cardCont}>
@@ -62,7 +68,7 @@ fetch(url, {
         />
       </FormControl>
       <CardActions className={classes.cardActionStyle}>
-        <CustomizedButtons />
+        <CustomizedButtons onClick={login}/>
       </CardActions>
       <SigUp/>
     </Card>
