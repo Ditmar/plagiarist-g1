@@ -15,11 +15,11 @@ export const mainListItems = (
   <React.Fragment>
     <Link to="/">
       <ListItemButton>
-          <ListItemIcon>
-            <DashboardIcon />
-          </ListItemIcon>
-          <ListItemText primary="Dashboard" />
-        
+        <ListItemIcon>
+          <DashboardIcon />
+        </ListItemIcon>
+        <ListItemText primary="Dashboard" />
+
       </ListItemButton>
     </Link>
     <Link to="/upload">
@@ -30,12 +30,14 @@ export const mainListItems = (
         <ListItemText primary="Orders" />
       </ListItemButton>
     </Link>
-    <ListItemButton>
-      <ListItemIcon>
-        <PeopleIcon />
-      </ListItemIcon>
-      <ListItemText primary="Customers" />
-    </ListItemButton>
+    <Link to="/list">
+      <ListItemButton>
+        <ListItemIcon>
+          <PeopleIcon />
+        </ListItemIcon>
+        <ListItemText primary="Listar" />
+      </ListItemButton>
+    </Link>
     <ListItemButton>
       <ListItemIcon>
         <BarChartIcon />
