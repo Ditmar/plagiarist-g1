@@ -17,9 +17,9 @@ const FileUpload = ({onCancel, name, type, size, onUpload}) => {
     function CardInfo(){
         return(
             <div className={classes.cardInfo}>                    
-                <PictureAsPdf style={{ color: 'orange' , width: "50px", height:"50px" }} /> <br/> {upload.file.name}  <br/>  {upload.file.type} <br/> {upload.file.size} MB
+                <PictureAsPdf className={classes.iconPdf} /> <br/> {upload.file.name}  <br/>  {upload.file.type} <br/> {upload.file.size} MB
                 <button className={classes.buttonDelete} onClick={handleClickDelete}>
-                    <DeleteForever style={{ color: 'red', width: "50px", height:"50px" }} />
+                    <DeleteForever className={classes.deletteIcon} />
                 </button>
             </div>
         )

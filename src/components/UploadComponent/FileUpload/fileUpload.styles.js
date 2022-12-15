@@ -1,14 +1,13 @@
 import { makeStyles } from "@material-ui/core";
-
 const useStyles = makeStyles(theme => ({
     main:{
         position: "relative",
-        padding: '10px',
+        padding: '1rem',
         height:"100%",
     },
     container: {
         position: "relative",
-        padding: '10px',
+        padding: '1rem',
         height:"100%",
         borderStyle: 'dotted',
     },
@@ -22,13 +21,20 @@ const useStyles = makeStyles(theme => ({
         opacity:"0"
     },
     button:{
-        margin: "10px",
+        margin: "1rem",
         border:" solid 1px gray",
-        borderRadius : "5px",
+        borderRadius : "0.5rem",
         color :"aliceblue",
-        background:"#239f98",
-        width:"100px",
-        height:"50px"
+        background: theme.palette.colorbuttonupload.main,
+        width:"10rem",
+        height:"3rem"
+    },
+    deletteIcon:{
+        color: theme.palette.high.main,
+        
+    },
+    iconPdf:{
+        color: theme.palette.low.main,
     },
     cardInfo:{
         display: "flex",
@@ -39,33 +45,28 @@ const useStyles = makeStyles(theme => ({
         border: "none",
         borderRadius: '50px',
         background:"none",
-        margin: "2px",
+        margin: "0.2rem",
         zIndex: "1200",
-        transition: "3s",
-        '&:hover': {
-            borderRadius: '10px',
-            background:"#dfa6a6",
-          },
+        transition: "3s"
     },
     inputButton:{
         display: "none"
     },
-    '@media (max-width: 800px)': {
+    '@media (max-width: 80rem)': {
         container: {
           display: "none"
         },
         input:{
-          //display: "none"
         },
         inputButton:{
             position:"relative",
             display: "flex",
-            width: "100px",
-            height: "50px",
-            backgroundColor : "#00004e",
-            borderRadius : "5px",
+            width: "10rem",
+            height: "3rem",
+            backgroundColor : theme.palette.colorbuttonupload.main,
+            borderRadius : "0.5rem",
             border:" solid 1px gray",
-            margin: "10px",
+            margin: "1rem",
             color: "white",
             justifyContent: "center",
             alignItems: "center"
