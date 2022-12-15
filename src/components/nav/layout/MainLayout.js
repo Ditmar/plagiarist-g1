@@ -1,7 +1,7 @@
 import { Box, Toolbar } from '@mui/material'
 import React from 'react'
-import { NavBar } from '../NavBar';
-import { SideBar } from '../SideBar';
+import { NavBar } from '../components/NavBar';
+import { SideBar } from '../components/SideBar';
 import { Routes, Route } from 'react-router-dom';
 import { Dashboard } from '../../pages/Dashboard';
 import { Trabajos } from '../../pages/Trabajos';

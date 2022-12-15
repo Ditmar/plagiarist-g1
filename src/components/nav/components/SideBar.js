@@ -1,9 +1,10 @@
-import { Drawer, Box, Toolbar, Typography, Divider, Avatar} from "@mui/material"
-import logo from '../assets/images/logoo.png'
+import { Drawer, Box, Toolbar, Typography, Avatar } from "@mui/material"
+import logo from '../../../assets/images/logoo.png'
 import { NavLink } from 'react-router-dom'
 import "./style.css"
+import { SidebarData } from "./data/SideBarData"
 
-export const SideBar = ({ drawerWidth = 255 }) => {
+export const SideBar = ({ drawerWidth = 240 }) => {
   return (
     <Box
       component='nav'
@@ -50,30 +51,15 @@ export const SideBar = ({ drawerWidth = 255 }) => {
         <div style={{ width: '100%', height: '100vh' }}>
           <nav>
             <ul className="sidebar-menu">
-              <li >
-                <NavLink to='/'><i className="fas fa-chart-pie"></i>Inicio</NavLink>
-              </li>
-              <li >
-                <NavLink to='/trabajos'><i className="fas fa-briefcase"></i>Trabajos</NavLink>
-              </li>
-              <li >
-                <NavLink to='/revisar'><i className="fas fa-lightbulb"></i>Revisar Tesis</NavLink>
-              </li>
-              <li >
-                <NavLink to='/listar'><i className="fas fa-users"></i>Listar Tesis</NavLink>
-              </li>
-              <li >
-                <NavLink to='/publicar'><i className="fas fa-user-tie"></i>Publicar Tesis</NavLink>
-              </li>
-              <li >
-                <NavLink to='/reportes'><i className="fas fa-book"></i>Reportes Generales</NavLink>
-              </li>
-              <br />
-              <Divider />
-              <br />
-              <li >
-                <NavLink to='/settings'><i className="fas fa-cog"></i>Settings</NavLink>
-              </li>
+              {
+                SidebarData.map((item, index) =>
+                (
+                  <li key={index}>
+                    <NavLink to={item.path}><i className={item.icon}></i>{item.title}</NavLink>
+                  </li>
+                )
+                )
+              }
             </ul>
           </nav>
         </div>
