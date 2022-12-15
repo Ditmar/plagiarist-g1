@@ -1,13 +1,16 @@
-import { makeStyles } from '@material-ui/core';
-
-const useStyles = makeStyles(theme => ({
-    header: {
-        display: 'flex',
-        background: theme.palette.primary.main
+import { makeStyles } from "@material-ui/core/styles";
+export const useStyles = makeStyles(() => ({
+    searchtheses: {
+        marginLeft: "280px", 
+        marginTop: "70px", 
+        marginRight: "25px"
     },
-    h1: {
-        color: theme.palette.fourth.main,
-        marginLeft: '1rem'
+    tittle:{
+        fontSize: "24px",
+        color: "#252733",
+        fontFamily: "Mulish",
+        fontWeight: "700",
+        marginRight: 25,
     }
-}));
-export default useStyles;
+
+  }));

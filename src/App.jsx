@@ -4,7 +4,9 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
+import "./App.css"
 import Login from './pages/login';
+import Header from './components/Header/Header'
 import Dashboard from './components/DashboardComponent/Dashboard';
 import UploadComponent from './components/UploadComponent';
 import LoaderComponent from './components/LoaderComponent';
@@ -40,36 +42,9 @@ function App() {
 
   return (
     
-      <Theme>
-        <LoaderSpinnerContextProvider>
-          <BrowserRouter>
-            <LoaderComponent />
-            <Routes>
-              <Route path="/" element={<>
-                <Dashboard> 
-                  <p>content </p> 
-                </Dashboard>
-              </>}/>
-              <Route path="/card" element={<>
-                <Dashboard> 
-                  <CardsFather />
-                </Dashboard>
-              </> } />
-              <Route path="/upload" element={<>
-                <Dashboard> 
-                  <UploadComponent />
-                </Dashboard>
-              </> } />
-              <Route path="/list" element={<>
-                <Dashboard> 
-                  <ListarTesis />
-                </Dashboard>
-              </> } />
-              <Route path="/login" element={<Login />} />
-            </Routes>
-          </BrowserRouter>
-        </LoaderSpinnerContextProvider>
-      </Theme>
+      <>    <Header/></>
+  
+     
   );
 }
 
