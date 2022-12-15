@@ -2,7 +2,7 @@ import { makeStyles} from "@material-ui/styles";
 
 export const useStyles = makeStyles((theme) => ({
     container: {
-        background: theme.palette.primary.main,
+        background: theme.palette.color1.main,
         border: "1px solid #DFE0EB",
         borderRadius: 3,
         padding: "24px 4px 24px 0px",
@@ -25,8 +25,8 @@ export const useStyles = makeStyles((theme) => ({
         fontSize:"18px",
         color: "#252733",
         marginLeft:20,
-        letterSpacing: "0.4px",
-        lineHeight: "24px",
+        letterSpacing: "0.8px",
+        lineHeight: "30px",
     },
     itemTitle:{
         fontFamily: "mulish",
@@ -73,17 +73,9 @@ export const useStyles = makeStyles((theme) => ({
         minHeight:"50vh",
         minWidth:"50vh",
         width:"100vh",
-        backgroundColor:'#ffffff',
+        background: theme.palette.color2.main,
         borderRadius:9,
+        borderColor:"#676564",
 
-    },
-    mainBlock:{
-        padding:90,
-        marginLeft:255,
-        "@media (max-width:1080px)":{
-            padding:10,
-            marginLeft:0,
-            
-        }
     },
 }))
