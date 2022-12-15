@@ -10,11 +10,13 @@ import {
   InputBase,
 } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import {Stack} from "@mui/material";
+import MenuItem from "@mui/material/MenuItem";
 import React, { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import { useStyles } from "./header.styles.js";
-import { SearchTheses } from "./SearchTheses";
 
+import { SearchTheses } from "./SearchTheses";
+import { useStyles } from "./header.styles.js";
 const NavBar = () => {
   const classes = useStyles();
   const [searchValues, setSearchValues] = useState("");
@@ -50,20 +52,13 @@ const NavBar = () => {
 
         <Typography></Typography>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            alignItems: "right",
-            gap: "20px",
-          }}
-        >
-          <div>
+       <Stack direction="row" spacing={1}>
+          
             <Paper
               variant="outlined"
               component="form"
               sx={{
-                p: "2px 4px",
+             
                 display: "flex",
                 alignItems: "right",
                 width: 400,
@@ -87,8 +82,7 @@ const NavBar = () => {
                 <SearchIcon />
               </IconButton>
             </Paper>
-          </div>
-          <div style={{ marginRight: "20px" }}>
+        <MenuItem>
             <Badge color="primary" variant="dot">
               <NotificationsIcon
                 fontSize="small"
@@ -96,26 +90,17 @@ const NavBar = () => {
                   color: "#C5C7CD",
                 }}
               />
-            </Badge>
-          </div>
-          <div>
-            <p
-              style={{
-                color: "#252733",
-                fontFamily: ["Mulish", "sans-serif"].join(),
-                fontWeight: "500",
-                fontSize: "14px",
-              }}
-            >
-              Jones Ferdinand
-            </p>
-          </div>
-          <div>
-          <Avatar>  
-            <img src='componentHeader/avatar.jpeg' alt='Avatar' />    
-          </Avatar>
-          </div>
-        </div>
+            </Badge></MenuItem>
+      
+            <MenuItem>
+            <Typography className={classes.name}>Jones Ferdinand</Typography>
+        
+            </MenuItem>
+            <Avatar>
+              <img src="componentHeader/avatar.jpeg" alt="Avatar" />
+            </Avatar>
+            </Stack>
+      
       </Toolbar>
 
       {resultado && <SearchTheses resultado={resultado} />}
