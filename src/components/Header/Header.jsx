@@ -1,6 +1,5 @@
 import { MenuOutlined } from "@mui/icons-material";
 import {
-  AppBar,
   Avatar,
   Badge,
   MenuList,
@@ -13,12 +12,11 @@ import {
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import React, { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import {useStyles} from "./header.styles.js";
+import { useStyles } from "./header.styles.js";
 import { SearchTheses } from "./SearchTheses";
 
-
 const NavBar = () => {
-  const classes= useStyles ();
+  const classes = useStyles();
   const [searchValues, setSearchValues] = useState("");
   const [resultado, setResultado] = useState(null);
 
@@ -35,11 +33,7 @@ const NavBar = () => {
     <>
       <Toolbar>
         <MenuList>
-       
-          <Typography className={classes.title}>
-            
-            Overview
-          </Typography>
+          <Typography className={classes.title}>Overview</Typography>
           <Typography
             variant="h6"
             sx={{
@@ -49,9 +43,7 @@ const NavBar = () => {
               fontWeight: "700",
               marginRight: 25,
             }}
-          >
-            
-          </Typography>
+          ></Typography>
           <Typography></Typography>
           <Typography></Typography>
         </MenuList>
@@ -119,10 +111,9 @@ const NavBar = () => {
             </p>
           </div>
           <div>
-            <Avatar
-              alt="avatar"
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-            />
+          <Avatar>  
+            <img src='componentHeader/avatar.jpeg' alt='Avatar' />    
+          </Avatar>
           </div>
         </div>
       </Toolbar>
