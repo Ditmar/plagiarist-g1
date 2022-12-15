@@ -44,7 +44,6 @@ const theme = createTheme({
         colorbuttonupload: {
             main: '#3751ff'
         }
-
     },
     overrides: {
         MuiCssBaseline: {

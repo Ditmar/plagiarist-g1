@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
         border:" solid 1px gray",
         borderRadius : "0.5rem",
         color :"aliceblue",
-        background: theme.palette.colorbuttonupload.main,
+        background: theme.palette.primary.main,
         width:"10rem",
         height:"3rem"
     },
